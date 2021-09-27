@@ -5,7 +5,10 @@ type AuthUser = {
 }
 const User = () => {
   // informing here that user can be null or AuthUser
-  const [user, setUser] = useState<AuthUser | null>(null);
+ // const [user, setUser] = useState<AuthUser | null>(null);
+  
+  // type assertion if one is sure user will be initialized 
+  const [user, setUser] = useState<AuthUser>({} as AuthUser);
   const handleLogin = () => {
      // hard code user login info a
      setUser({
@@ -13,16 +16,16 @@ const User = () => {
        email: 'lucas@example.com'
 })
   }
-  const handleLogout = () => {
+ /* const handleLogout = () => {
     // set back to state of null 
     setUser(null);
-   }
+   }*/
   return (
     <div>
       <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
-      <div>User name is {user?.name} </div>
-       <div>User email is {user?.email} </div>
+      {/* <button onClick={handleLogout}>Logout</button>*/}
+      <div>User name is {user.name} </div>
+       <div>User email is {user.email} </div>
     </div>
   );
 };
