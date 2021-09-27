@@ -1,10 +1,4 @@
-// object props
-type PersonProps = {// typing an obj prop
-  name: {
-    first: string
-    last: string
-}
-}
+import { PersonProps } from "./Props/Person.types";
 
 const Person = (props: PersonProps) => {
   return (
