@@ -3,6 +3,7 @@ import Greet from './Components/Greet';
 import Person from './Components/Person';
 import PersonList from './Components/PersonList';
 import Button from './Components/Props/Button';
+import Container from './Components/Props/Container';
 import Heading from './Components/Props/Heading';
 import Input from './Components/Props/Input';
 import Oscar from './Components/Props/Oscar';
@@ -39,7 +40,8 @@ function App() {
       <Heading>Placeholder text</Heading>
       <Oscar><Heading>The Oscar goes to Leonardo DiCaprio</Heading></Oscar>
       <Button handleClick={(event, id) => console.log('Click Me', event, id)} />
-      <Input value="" handleChange={event => console.log(event)}/>
+      <Input value="" handleChange={event => console.log(event)} />
+      <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
     </div>
   );
 }
