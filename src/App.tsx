@@ -2,6 +2,11 @@ import './App.css';
 import Greet from './Components/Greet';
 import Person from './Components/Person';
 import PersonList from './Components/PersonList';
+import Button from './Components/Props/Button';
+import Heading from './Components/Props/Heading';
+import Input from './Components/Props/Input';
+import Oscar from './Components/Props/Oscar';
+import Status from './Components/Props/Status';
 
 function App() {
   const personName = {
@@ -27,9 +32,14 @@ function App() {
   ];
   return (
     <div className="App">
-      <Greet name='Lily' messageCount={20} isLoggedIn={false} />
+      <Greet name='Lily' isLoggedIn={true} />
       <Person name={personName} />
-      <PersonList names={nameList}/>
+      <PersonList names={nameList} />
+      <Status status='loading' />
+      <Heading>Placeholder text</Heading>
+      <Oscar><Heading>The Oscar goes to Leonardo DiCaprio</Heading></Oscar>
+      <Button handleClick={(event, id) => console.log('Click Me', event, id)} />
+      <Input value="" handleChange={event => console.log(event)}/>
     </div>
   );
 }
