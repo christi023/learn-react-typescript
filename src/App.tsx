@@ -15,6 +15,7 @@ import User1 from './Components/Context/User';
 import Counter from './Components/Class/Counter';
 import Private from './Components/Auth/Private';
 import Profile from './Components/Auth/Profile';
+import List from './Components/Generics/List';
 
 function App() {
   const personName = {
@@ -58,6 +59,19 @@ function App() {
         </div>
         <Counter message="The count value is" />
         <Private isLoggedIn={true} component={Profile} />
+        {/*   <List
+          items={['Luke cage', 'Black Panther', 'Punisher']}
+          onClick={(item) => console.log(item)}
+        />
+     <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+        <List
+          items={[
+            { id: 1, first: 'Lily', last: 'Flower' },
+            { id: 2, first: 'Miles', last: 'Smith' },
+            { id: 3, first: 'Mary', last: 'Mae' },
+          ]}
+          onClick={(item) => console.log(item)}
+        />
       </div>
     </>
   );
